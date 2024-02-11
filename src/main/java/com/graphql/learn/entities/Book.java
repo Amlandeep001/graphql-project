@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -15,6 +16,7 @@ import lombok.experimental.FieldDefaults;
 @Table(name = "project_books")
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Book

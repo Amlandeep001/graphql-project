@@ -26,12 +26,13 @@ public class BookController
 	@MutationMapping("createBook")
 	public Book create(@Argument BookInput book)
 	{
-		Book b = new Book();
-		b.setTitle(book.getTitle());
-		b.setDesc(book.getDesc());
-		b.setPrice(book.getPrice());
-		b.setAuthor(book.getAuthor());
-		b.setPages(book.getPages());
+		Book b = Book.builder()
+				.title(book.getTitle())
+				.desc(book.getDesc())
+				.price(book.getPrice())
+				.author(book.getAuthor())
+				.pages(book.getPages())
+				.build();
 		return this.bookService.create(b);
 	}
 

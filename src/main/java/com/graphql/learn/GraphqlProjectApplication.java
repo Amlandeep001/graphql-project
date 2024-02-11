@@ -25,26 +25,29 @@ public class GraphqlProjectApplication implements CommandLineRunner
 	@Override
 	public void run(String... args) throws Exception
 	{
-		Book b1 = new Book();
-		b1.setTitle("Complete Reference");
-		b1.setDesc("For learning java");
-		b1.setPages(2000);
-		b1.setPrice(5000);
-		b1.setAuthor("XYZ");
+		Book b1 = Book.builder()
+				.title("Complete Reference")
+				.desc("For learning java")
+				.pages(2000)
+				.price(5000)
+				.author("XYZ")
+				.build();
 
-		Book b2 = new Book();
-		b2.setTitle("Think Java");
-		b2.setDesc("For learning java");
-		b2.setPages(3000);
-		b2.setPrice(5000);
-		b2.setAuthor("ABC");
+		Book b2 = Book.builder()
+				.title("Think Java")
+				.desc("For learning java")
+				.pages(3000)
+				.price(5000)
+				.author("ABC")
+				.build();
 
-		Book b3 = new Book();
-		b3.setTitle("Head first to java");
-		b3.setDesc("For starting java concepts");
-		b3.setPages(1000);
-		b3.setPrice(2000);
-		b3.setAuthor("PQR");
+		Book b3 = Book.builder()
+				.title("Head first to java")
+				.desc("For starting java concepts")
+				.pages(1000)
+				.price(2000)
+				.author("PQR")
+				.build();
 
 		this.bookService.create(b1);
 		this.bookService.create(b2);
