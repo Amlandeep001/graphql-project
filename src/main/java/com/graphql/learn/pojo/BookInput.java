@@ -1,11 +1,12 @@
 package com.graphql.learn.pojo;
 
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.experimental.FieldDefaults;
+import lombok.Builder;
+import lombok.Value;
+import lombok.extern.jackson.Jacksonized;
 
-@Data
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@Value
+@Builder
+@Jacksonized
 public class BookInput
 {
 	String title;
