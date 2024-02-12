@@ -1,8 +1,8 @@
-package com.graphql.learn.services;
+package com.graphql.learn.service;
 
 import java.util.List;
 
-import com.graphql.learn.entities.Book;
+import com.graphql.learn.entity.Book;
 
 public interface BookService
 {

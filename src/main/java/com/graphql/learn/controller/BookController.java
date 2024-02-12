@@ -1,4 +1,4 @@
-package com.graphql.learn.controllers;
+package com.graphql.learn.controller;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
-import com.graphql.learn.entities.Book;
+import com.graphql.learn.entity.Book;
 import com.graphql.learn.pojo.BookInput;
-import com.graphql.learn.services.BookService;
+import com.graphql.learn.service.BookService;
 
 @Controller
 public class BookController

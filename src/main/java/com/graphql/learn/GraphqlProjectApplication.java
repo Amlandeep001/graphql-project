@@ -4,8 +4,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.graphql.learn.entities.Book;
-import com.graphql.learn.services.BookService;
+import com.graphql.learn.entity.Book;
+import com.graphql.learn.service.BookService;
 
 @SpringBootApplication
 public class GraphqlProjectApplication implements CommandLineRunner

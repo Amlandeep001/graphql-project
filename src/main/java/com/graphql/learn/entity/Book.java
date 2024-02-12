@@ -1,4 +1,4 @@
-package com.graphql.learn.entities;
+package com.graphql.learn.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

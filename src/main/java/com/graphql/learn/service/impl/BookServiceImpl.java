@@ -1,12 +1,12 @@
-package com.graphql.learn.services.impl;
+package com.graphql.learn.service.impl;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.graphql.learn.entities.Book;
-import com.graphql.learn.repositories.BookRepo;
-import com.graphql.learn.services.BookService;
+import com.graphql.learn.entity.Book;
+import com.graphql.learn.repository.BookRepo;
+import com.graphql.learn.service.BookService;
 
 @Service
 public class BookServiceImpl implements BookService
