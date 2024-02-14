@@ -22,22 +22,27 @@ public class BookController
 	}
 
 	// create
-
 	@MutationMapping("createBook")
 	public Book create(@Argument BookInput book)
 	{
-		Book b = Book.builder()
-				.title(book.getTitle())
-				.desc(book.getDesc())
-				.price(book.getPrice())
-				.author(book.getAuthor())
-				.pages(book.getPages())
-				.build();
-		return this.bookService.create(b);
+		return this.bookService.create(book);
+	}
+
+	// update
+	@MutationMapping("updateBook")
+	public Book update(@Argument int bookId, @Argument BookInput book)
+	{
+		return this.bookService.update(bookId, book);
+	}
+
+	// update
+	@MutationMapping("removeBook")
+	public String remove(@Argument int bookId, @Argument BookInput book)
+	{
+		return this.bookService.remove(bookId);
 	}
 
 	// get all
-
 	@QueryMapping("allBooks")
 	public List<Book> getAll()
 	{

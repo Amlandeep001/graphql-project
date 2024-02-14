@@ -4,7 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.graphql.learn.entity.Book;
+import com.graphql.learn.pojo.BookInput;
 import com.graphql.learn.service.BookService;
 
 @SpringBootApplication
@@ -25,7 +25,7 @@ public class GraphqlProjectApplication implements CommandLineRunner
 	@Override
 	public void run(String... args) throws Exception
 	{
-		Book b1 = Book.builder()
+		BookInput b1 = BookInput.builder()
 				.title("Complete Reference")
 				.desc("For learning java")
 				.pages(2000)
@@ -33,7 +33,7 @@ public class GraphqlProjectApplication implements CommandLineRunner
 				.author("XYZ")
 				.build();
 
-		Book b2 = Book.builder()
+		BookInput b2 = BookInput.builder()
 				.title("Think Java")
 				.desc("For learning java")
 				.pages(3000)
@@ -41,7 +41,7 @@ public class GraphqlProjectApplication implements CommandLineRunner
 				.author("ABC")
 				.build();
 
-		Book b3 = Book.builder()
+		BookInput b3 = BookInput.builder()
 				.title("Head first to java")
 				.desc("For starting java concepts")
 				.pages(1000)
