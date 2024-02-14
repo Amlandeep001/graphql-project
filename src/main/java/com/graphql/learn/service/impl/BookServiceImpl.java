@@ -60,7 +60,7 @@ public class BookServiceImpl implements BookService
 			existingBook.setAuthor(book.getAuthor());
 			existingBook.setPages(book.getPages());
 
-			Book updatedBook = bookRepo.save(existingBook);
+			Book updatedBook = this.bookRepo.save(existingBook);
 			return updatedBook;
 		}
 
@@ -76,7 +76,7 @@ public class BookServiceImpl implements BookService
 		{
 			Book bookToBeDeeleted = optExistingBook.get();
 
-			bookRepo.delete(bookToBeDeeleted);
+			this.bookRepo.delete(bookToBeDeeleted);
 			return "book with id: " + bookId + " has been successfully deleted";
 		}
 
