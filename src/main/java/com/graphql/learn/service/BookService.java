@@ -16,7 +16,9 @@ public interface BookService
 	// get single book
 	Book get(int bookId);
 
+	// update
 	Book update(int bookId, BookInput book);
 
+	// delete
 	String remove(int bookId);
 }

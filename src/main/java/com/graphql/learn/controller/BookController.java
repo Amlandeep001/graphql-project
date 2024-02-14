@@ -11,6 +11,12 @@ import com.graphql.learn.entity.Book;
 import com.graphql.learn.pojo.BookInput;
 import com.graphql.learn.service.BookService;
 
+/**
+ * Controller for maintaining book related GraphQL operations
+ * @author Amlan
+ *
+ */
+
 @Controller
 public class BookController
 {
@@ -28,20 +34,6 @@ public class BookController
 		return this.bookService.create(book);
 	}
 
-	// update
-	@MutationMapping("updateBook")
-	public Book update(@Argument int bookId, @Argument BookInput book)
-	{
-		return this.bookService.update(bookId, book);
-	}
-
-	// update
-	@MutationMapping("removeBook")
-	public String remove(@Argument int bookId, @Argument BookInput book)
-	{
-		return this.bookService.remove(bookId);
-	}
-
 	// get all
 	@QueryMapping("allBooks")
 	public List<Book> getAll()
@@ -54,5 +46,19 @@ public class BookController
 	public Book get(@Argument int bookId)
 	{
 		return this.bookService.get(bookId);
+	}
+
+	// update
+	@MutationMapping("updateBook")
+	public Book update(@Argument int bookId, @Argument BookInput book)
+	{
+		return this.bookService.update(bookId, book);
+	}
+
+	// delete
+	@MutationMapping("removeBook")
+	public String remove(@Argument int bookId, @Argument BookInput book)
+	{
+		return this.bookService.remove(bookId);
 	}
 }

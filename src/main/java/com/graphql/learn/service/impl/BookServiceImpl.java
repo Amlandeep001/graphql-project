@@ -10,6 +10,11 @@ import com.graphql.learn.pojo.BookInput;
 import com.graphql.learn.repository.BookRepo;
 import com.graphql.learn.service.BookService;
 
+/**
+ * Implementation class for processing data
+ * @author Amlan
+ *
+ */
 @Service
 public class BookServiceImpl implements BookService
 {
@@ -74,9 +79,9 @@ public class BookServiceImpl implements BookService
 
 		if(optExistingBook.isPresent())
 		{
-			Book bookToBeDeeleted = optExistingBook.get();
+			Book bookToBeDeleted = optExistingBook.get();
 
-			this.bookRepo.delete(bookToBeDeeleted);
+			this.bookRepo.delete(bookToBeDeleted);
 			return "book with id: " + bookId + " has been successfully deleted";
 		}
 
