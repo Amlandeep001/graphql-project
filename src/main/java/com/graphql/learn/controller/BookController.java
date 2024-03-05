@@ -57,7 +57,7 @@ public class BookController
 
 	// delete
 	@MutationMapping("removeBook")
-	public String remove(@Argument int bookId, @Argument BookInput book)
+	public String remove(@Argument int bookId)
 	{
 		return this.bookService.remove(bookId);
 	}
