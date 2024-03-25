@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.graphql.learn.entity.Book;
+import com.graphql.learn.exception.BookNotFoundException;
 import com.graphql.learn.pojo.BookInput;
 import com.graphql.learn.repository.BookRepo;
 import com.graphql.learn.service.BookService;
@@ -48,7 +49,7 @@ public class BookServiceImpl implements BookService
 	public Book get(int bookId)
 	{
 		return this.bookRepo.findById(bookId)
-				.orElseThrow(() -> new RuntimeException("Book you are looking for not found on server !!"));
+				.orElseThrow(() -> new BookNotFoundException("Book you are looking for not found on server !!"));
 	}
 
 	@Override
@@ -68,8 +69,10 @@ public class BookServiceImpl implements BookService
 			Book updatedBook = this.bookRepo.save(existingBook);
 			return updatedBook;
 		}
-
-		return null;
+		else
+		{
+			throw new BookNotFoundException("Book you are trying to update is not found on server !!");
+		}
 	}
 
 	@Override
@@ -85,6 +88,9 @@ public class BookServiceImpl implements BookService
 			return "book with id: " + bookId + " has been successfully deleted";
 		}
 
-		return null;
+		else
+		{
+			throw new BookNotFoundException("Book you are trying to delete is not found on server !!");
+		}
 	}
 }
