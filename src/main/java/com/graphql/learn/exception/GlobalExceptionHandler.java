@@ -9,7 +9,7 @@ import graphql.GraphQLError;
 public class GlobalExceptionHandler
 {
 	@GraphQlExceptionHandler
-	public GraphQLError handleBookNotFpundException(Exception ex)
+	public GraphQLError handleBookNotFoundException(Exception ex)
 	{
 		return GraphQLError.newError()
 				.message(ex.getMessage())
